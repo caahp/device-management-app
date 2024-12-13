@@ -11,6 +11,7 @@ class DeviceRepository {
         devices.part_number
       FROM devices
       JOIN categories ON devices.category_id = categories.id
+      ORDER BY devices.id ASC
     `);
     return rows;
   }
