@@ -1,0 +1,10 @@
+<div class = "sidenav-header">
+    <img [width] = "profilePicSize" [height] = "profilePicSize" src = "../../assets/logo2.png" alt = "logo" class = "logo">
+</div>
+
+<mat-nav-list>
+    <a mat-list-item *ngFor = "let item of menuItems" [routerLink] = "item.route" routerLinkActive="selected-menu-item" #rla="routerLinkActive" [activated]="rla.isActive">
+        <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+        <span matListItemTitle>{{item.label}}</span>
+    </a>
+</mat-nav-list>

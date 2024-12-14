@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'device_management';
+  collapsed = false;
+  title = 'Device Management App';
+
+  get sidenavWidth() {
+    return this.collapsed ? '75px' : '250px';
+  }
 }
+
