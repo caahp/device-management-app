@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,7 @@ import { CategoryManagementComponent } from './category-management/category-mana
 import { CustomSidenavComponent } from './components/custom-sidenav/custom-sidenav.component';
 import { GithubProjectComponent } from './github-project/github-project.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DeviceDialogComponent } from './device-dialog/device-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CategoryManagementComponent,
     CustomSidenavComponent,
     GithubProjectComponent,
-    DashboardComponent
+    DashboardComponent,
+    DeviceDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

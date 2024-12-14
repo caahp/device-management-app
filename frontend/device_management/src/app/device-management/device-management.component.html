@@ -1,1 +1,39 @@
-<h1>Device Management</h1>
+<mat-card>
+    <b><span class="title">Manage Devices</span></b>
+    <button mat-flat-button color="primary" class = "float-right" click = "handleAddAction()">Add Device</button>
+</mat-card>
+
+<!-- List all devices -->
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Device List</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list>
+            <!-- Header -->
+            <div class="device-list-header">
+                <span>ID</span>
+                <span>Category</span>
+                <span>Color</span>
+                <span>Part Number</span>
+            </div>
+            <!-- Items -->
+            <mat-list-item *ngFor="let device of devices; let last = last" class="horizontal-list-item">
+                <div class="device-grid">
+                    <span>{{ device.id }}</span>
+                    <span>{{ device.category_name }}</span>
+                    <span>{{ device.color }}</span>
+                    <span>{{ device.part_number }}</span>
+                </div>
+                <mat-divider *ngIf="!last"></mat-divider>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
+
+
+
+
+
+
+
