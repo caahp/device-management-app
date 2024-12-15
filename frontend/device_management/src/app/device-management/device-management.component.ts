@@ -8,7 +8,6 @@ interface Device {
   category_name: string;
   color: string;
   part_number: string;
-
 }
 
 @Component({
@@ -24,12 +23,23 @@ export class DeviceManagementComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAll().subscribe((data: Device[]) => {
-      console.log(data);
       this.devices = data;
     });
   }
 
   getAll(): Observable<Device[]> {
     return this.http.get<Device[]>(this.url + '/devices');
+  }
+
+  deleteDevice(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.url}/devices/${id}`);
+  }
+
+  onDeleteDevice(id: number): void {
+    if (confirm('Are you sure you want to delete this device?')) {
+      this.deleteDevice(id).subscribe(() => {
+        this.devices = this.devices.filter(device => device.id !== id);
+      });
+    }
   }
 }

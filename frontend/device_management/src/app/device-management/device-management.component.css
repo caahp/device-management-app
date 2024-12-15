@@ -16,10 +16,20 @@ button{
 .device-list-header,
 .device-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 2fr; 
+    grid-template-columns: 1fr 2fr 1fr 2fr auto;
     gap: 16px;
     padding: 8px 0;
-    align-items: center; 
+    align-items: center;
+}
+
+.delete-icon {
+    cursor: pointer;
+    justify-self: end;
+    transition: color 0.3s;
+}
+
+.delete-icon:hover {
+    color: #d32f2f;
 }
 
 
