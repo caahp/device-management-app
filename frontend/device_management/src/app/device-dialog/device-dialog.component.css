@@ -1,0 +1,14 @@
+.dialog-container {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+}

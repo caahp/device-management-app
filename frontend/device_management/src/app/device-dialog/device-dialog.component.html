@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>Add Device</h2>
+<mat-dialog-content>
+  <form>
+    <!-- Category -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Category</mat-label>
+      <mat-select [(ngModel)]="device.categoryId" name="categoryId" required>
+        <mat-option *ngFor="let category of categories" [value]="category.id">
+          {{ category.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Color -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Color</mat-label>
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="device.color"
+        name="color"
+        maxlength="16"
+        required
+        pattern="^[a-zA-Z\s]{1,16}$"
+        #colorField="ngModel"
+      />
+      <mat-error *ngIf="colorField.invalid && colorField.touched">
+        Color must contain only letters and up to 16 characters.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Part Number -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Part Number</mat-label>
+      <input
+        matInput
+        type="number"
+        [(ngModel)]="device.partNumber"
+        name="partNumber"
+        required
+        min="1"
+        #partNumberField="ngModel"
+      />
+      <mat-error *ngIf="partNumberField.invalid && partNumberField.touched">
+        Part Number must be a positive integer.
+      </mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+  <button mat-button color="primary" (click)="submitForm()" [disabled]="!isValidForm()">Add</button>
+</mat-dialog-actions>

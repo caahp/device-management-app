@@ -57,3 +57,17 @@ mat-divider {
     margin: 8px 0;
 }
 
+.full-width {
+    width: 100%;
+  }
+  
+  mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  mat-dialog-actions {
+    margin-top: 16px;
+  }
+  
