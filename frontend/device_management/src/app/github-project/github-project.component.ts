@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./github-project.component.css']
 })
 export class GithubProjectComponent {
+  redirectToGitHub(): void {
+    window.open('https://github.com/caahp/device-management-app', '_blank');
+  }
 
 }
