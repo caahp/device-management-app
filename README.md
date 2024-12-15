@@ -29,6 +29,24 @@ The backend follows the **View-Controller-Service-Repository** (VCSR) pattern:
 - **Service**: Contains business logic.
 - **Repository**: Handles data access and interaction with the database.
 
+## Running the Project
+
+### Frontend
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend/device_management
+2. Run the Angular app:
+   ```bash
+   ng serve
+### Backend
+1. Install dependencies:
+   ```bash
+   npm install
+2. Navigate to the backend directory and start the server:
+   ```bash
+   cd backend/src
+   node app.js
+
 ## API Endpoints
 
 ### Devices
