@@ -1,1 +1,36 @@
-<h1>Category Management</h1>
+<!-- Add Category -->
+<mat-card>
+    <b><span class="title">Manage Categories</span></b>
+    <button mat-flat-button color="primary" class="float-right" (click)="openAddCategoryDialog()">Add Category</button>
+  </mat-card>
+
+<!-- List all categories -->
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Category List</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list>
+            <!-- Category List Header -->
+            <div class="category-list-header">
+                <span>ID</span>
+                <span>Name</span>
+                <span>Actions</span>
+            </div>
+            <!-- Items -->
+            <mat-list-item *ngFor="let category of categories; let last = last" class="horizontal-list-item">
+                <div class="category-grid">
+                    <span>{{ category.id }}</span>
+                    <span>{{ category.name }}</span>
+                    <!-- Trash Icon -->
+                    <mat-icon 
+                        matTooltip="Delete category" 
+                        color="warn" 
+                        class="delete-icon"
+                        (click)="onDeleteCategory(category.id)">delete</mat-icon>
+                </div>
+                <mat-divider *ngIf="!last"></mat-divider>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

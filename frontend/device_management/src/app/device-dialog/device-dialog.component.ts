@@ -11,7 +11,9 @@ import { environment } from '../../enviroments/enviroment';
 export class DeviceDialogComponent implements OnInit {
 
   apiUrl = environment.apiUrl;
+
   categories: { id: number; name: string }[] = []; // List of categories
+  
   device = {
     categoryId: null,
     color: '',      

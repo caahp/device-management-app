@@ -22,6 +22,7 @@ import { CustomSidenavComponent } from './components/custom-sidenav/custom-siden
 import { GithubProjectComponent } from './github-project/github-project.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DeviceDialogComponent } from './device-dialog/device-dialog.component';
+import { CategoryDialogComponent } from './category-dialog/category-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DeviceDialogComponent } from './device-dialog/device-dialog.component';
     CustomSidenavComponent,
     GithubProjectComponent,
     DashboardComponent,
-    DeviceDialogComponent
+    DeviceDialogComponent,
+    CategoryDialogComponent
   ],
   imports: [
     BrowserModule,

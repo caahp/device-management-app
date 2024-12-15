@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>Add Category</h2>
+<mat-dialog-content>
+  <form>
+    <!-- Name -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="category.name"
+        name="name"
+        maxlength="128"
+        required
+        pattern="^[a-zA-Z\s]{1,128}$"
+        #nameField="ngModel"
+      />
+      <mat-error *ngIf="nameField.invalid && nameField.touched">
+        Name must contain only letters and up to 128 characters.
+      </mat-error>
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+  <button mat-button color="primary" (click)="submitForm()" [disabled]="!isValidForm()">Add</button>
+</mat-dialog-actions>
