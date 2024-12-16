@@ -27,6 +27,19 @@ class DeviceRepository {
   async delete(id) {
     await db.query('DELETE FROM devices WHERE id = ?', [id]);
   }
+
+  async getTotalDevicesByCategory() {
+    const [rows] = await db.query(`
+      SELECT 
+        categories.name AS category_name,
+        COUNT(*) AS total_devices
+      FROM devices
+      JOIN categories ON devices.category_id = categories.id
+      GROUP BY categories.name
+    `);
+    return rows;
+  }
+
 }
 
 module.exports = new DeviceRepository();

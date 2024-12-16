@@ -29,6 +29,16 @@ class DeviceController {
       res.status(400).json({ error: error.message });
     }
   }
+
+  async getTotalDevicesByCategory(req, res) {
+    try{
+      const devices = await deviceService.getTotalDevicesByCategory();
+      res.json(devices);
+    }catch(error){
+      res.status(500).json({ error: error.message });
+    }
+  }
+
 }
 
 module.exports = new DeviceController();

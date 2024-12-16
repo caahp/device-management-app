@@ -17,6 +17,10 @@ class DeviceService {
   delete(id) {
     return deviceRepository.delete(id);
   }
+
+  getTotalDevicesByCategory() {
+    return deviceRepository.getTotalDevicesByCategory();
+  }
 }
 
 module.exports = new DeviceService();
