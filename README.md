@@ -129,4 +129,8 @@ The backend follows the **View-Controller-Service-Repository** (VCSR) pattern:
 3. **DELETE /categories/{id}**
    - Delete a category by its ID.
 
+## Running Backend Tests
 
+1. Navigate to the backend directory and run test:
+   ```bash
+   npm test
