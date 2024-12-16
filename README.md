@@ -84,6 +84,21 @@ The backend follows the **View-Controller-Service-Repository** (VCSR) pattern:
 
 3. **DELETE /devices/{id}**
    - Delete a device by its ID.
+  
+4. **GET /devices/total**
+   - Retrieve the number of devices by all categories.
+   - Example response:
+   ```json
+   [
+     {
+        "category_name": "Smartphones",
+        "total_devices": 3
+    },
+    {
+        "category_name": "Laptops",
+        "total_devices": 4
+    }
+   ]
 
 ### Categories
 
