@@ -14,8 +14,4 @@ app.use(cors());
 app.use('/categories', categoryRoutes);
 app.use('/devices', deviceRoutes);
 
-// Start the server
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Device Management Server is running on http://localhost:${PORT}`);
-});
+module.exports = app;

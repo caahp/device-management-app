@@ -5,5 +5,12 @@
     "express": "^4.21.2",
     "joi": "^17.13.3",
     "mysql2": "^3.11.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }
